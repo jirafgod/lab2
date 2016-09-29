@@ -1,37 +1,40 @@
-###########################
+###########Функция нахождения минимального значения в массиве################
 def min(arr):
-	minimal =arr[0];
-	for el in arr:
-		if el<minimal:
-			minimal=el
-	return minimal
+	minimal =arr[0];					#говорим, что минимальное число это первое
+	for el in arr:						#запускаем цикл по массиву
+		if el<minimal:					#если следующее значение меньше, чем наше наименьшее,
+			minimal=el				#то делаем его минимальным
+	return minimal						#возвращаем минимальное число
 ############################
 
+###########Функция нахождения среднего значения в массиве################
 def average(arr):
-	summ=0
-	for el in arr:
-		summ=summ+el
-	return (summ/(len(arr)))
+	summ=0							#Задаем, что сумма изначально равна нулю
+	for el in arr:						#запускаем цикл по массиву
+		summ=summ+el					#складываем все значения массива
+	return (summ/(len(arr)))				#возвращаем сумму деленную на кол-во элементов
 
 ###########################	
 
+###########Функция переворачивания строки################
 def reverse(string):
-	i,string2=0,''
-	
-	for ch in range(len(string)):
-		string2=string2+string[(len(string)-ch-1)]
-	print (string2)
+	i,string2=0,''						#говорим что i=0, а string2=''
+		
+	for ch in range(len(string)):				#запускаем цикл по строке		
+		string2=string2+string[(len(string)-ch-1)]	#добавляем к след символу строки string2 следующий с конца символ scting	
+	print (string2)						#выводим перевернутую строку
 
 ###############################
 
+###########Функция нахождения детей старше 18 лет################
 def childrens(emps):
-	for el in emps:
-		for child in el['children']:
-			if child['age']>18: 
-				print (el['name'])
+	for el in emps:						#запускаем цикл по массиву родителей
+		for child in el['children']:			#запускаем цикл по массиву детей
+			if child['age']>18: 			#проверем старше ли 18 лет ребенок
+				print (el['name'])		#если старше 18 лет, выводим имя ребенка
 ##############################
 
-ivan = {
+ivan = {							
 	"name": "ivan",
 	"age": 34,
 	"children": [{
@@ -54,8 +57,8 @@ darja = {
    }],
 }
 
-arr = [1663,5342,123,6545,564]
-emps = [ivan, darja]
+arr = [1663,5342,123,6545,564]					#Задаем массив элементов для функций
+emps = [ivan, darja]						
 
 print (min(arr))
 print (average(arr))
